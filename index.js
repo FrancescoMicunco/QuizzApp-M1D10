@@ -17,8 +17,20 @@ const createQuestionsTable = function() {
     fourthQuestion.innerText = questions[0].incorrect_answers[2]
 }
 
+// create test answer function
+
+const testAnswer = function() {
+    alert("Tutto OK!")
+}
+
+// create onclick event
+
+let button = document.getElementById("send").addEventListener("click", testAnswer);
+
 window.onload = function() {
     createQuestionsTable()
+
+
     const questions = [{
         category: "Science: Computers",
         type: "multiple",
