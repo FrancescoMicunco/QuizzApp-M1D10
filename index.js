@@ -11,19 +11,33 @@ let questionNumbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const createQuestionsTable = function() {
     title.innerHTML = `<h3>${questions[0].question}</h3>`
     questionNumber.innerText = questionNumbersArray[0]
-    firstQuestion.innerText = `1 - questions[0].correct_answer`
-    secondQuestion.innerText = `2 - questions[0].incorrect_answers[0]`
-    thirdQuestion.innerText = `3 - questions[0].incorrect_answers[1]`
-    fourthQuestion.innerText = `4 - questions[0].incorrect_answers[2]`
+    firstQuestion.innerText = `1 - ` + questions[0].correct_answer
+    secondQuestion.innerText = `2 -` + questions[0].incorrect_answers[0]
+    thirdQuestion.innerText = `3 - ` + questions[0].incorrect_answers[1]
+    fourthQuestion.innerText = `4 - ` + questions[0].incorrect_answers[2]
 }
 
-// create test answer function
+// create grab checked answer
 
 const testAnswer = function() {
+    const radioButtons = document.querySelectorAll('input[name="question"]')
+    let selected;
+    for (let radio of radioButtons) {
+        if (radio.checked) {
+            selected = radio.value;
+            break;
+        }
+        console.log(selected)
+    }
     /* 
        - verifica se la risposta è corretta
-       - se è corretta aggiunge i punti al contatore
+       
+            1 seleziona tutti gli input ok
+            2 controlla quale è in stato check  to fix
+            3 associalo alla risposta corretta
+       - se è corretta aggiunge i punti al contatore OK
        - se è sbagliata mostra un esclamativo rosso
+       - passa alla domanda successiva
      */
 
 
@@ -33,6 +47,20 @@ const testAnswer = function() {
 // create onclick event
 
 let button = document.getElementById("send").addEventListener("click", testAnswer);
+
+
+// create a counter
+
+const counter = function() {
+    let counter = 0;
+    if (answer) {
+        counter += 1
+        alert("CORRECT ANSWER!")
+    } else { alert("WRONG ANSWER!") }
+}
+
+
+
 
 window.onload = function() {
     createQuestionsTable()
