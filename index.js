@@ -29,24 +29,25 @@ const testAnswer = function() {
                 console.log(selected)
                 break;
             }
-
         }
-        /* 
+    }
+    /* 
            - verifica se la risposta è corretta
            
                 1 seleziona tutti gli input OK
                 2 controlla quale è in stato check  OK
-                3 associalo alla risposta corretta
+                3 associalo alla risposta corretta OK
            - se è corretta aggiunge i punti al contatore OK
-           - se è sbagliata mostra un esclamativo rosso
+           - se è sbagliata mostra un esclamativo rosso OK
            - passa alla domanda successiva to fix
          */
-    }
     // check the answer
 
 const checkAnswer = function() {
     if (testAnswer) {
-        counter();
+        let counter = 0;
+        counter += 1;
+        alert("CORRECT ANSWER!");
         title.innerHTML = `<h3>${questions[1].question}</h3>`
         questionNumber.innerText = questionNumbersArray[1]
         firstQuestion.innerText = `1 - ` + questions[1].correct_answer
@@ -55,6 +56,7 @@ const checkAnswer = function() {
         fourthQuestion.innerText = `4 - ` + questions[1].incorrect_answers[2]
 
     } else {
+        alert("WRONG ANSWER!")
         let wrong = document.createElement("p");
         wrong.innerText = "!";
         wrong.classList.add("red");
@@ -64,14 +66,9 @@ const checkAnswer = function() {
 
 }
 
-
-
-
-
-
 // create onclick event
 
-let button = document.getElementById("send").addEventListener("click", testAnswer);
+let button = document.getElementById("send").addEventListener("click", checkAnswer);
 // create a random number between 1 and 4
 const choiceanswer = function() {
     return Math.floor(Math.random() * 4 + 1)
@@ -79,14 +76,13 @@ const choiceanswer = function() {
 
 // create a counter
 
-const counter = function() {
+/* const counter = function() {
     let counter = 0;
-    if (answer) {
-        counter += 1
+    counter += 1
         alert("CORRECT ANSWER!")
     } else { alert("WRONG ANSWER!") }
 }
-
+ */
 
 
 
