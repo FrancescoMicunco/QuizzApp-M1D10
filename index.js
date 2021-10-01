@@ -11,18 +11,20 @@ let questionNumbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const createQuestionsTable = function() {
     title.innerHTML = `<h3>${questions[0].question}</h3>`
     questionNumber.innerText = questionNumbersArray[0]
-    firstQuestion.innerText = questions[0].correct_answer
-    secondQuestion.innerText = questions[0].incorrect_answers[0]
-    thirdQuestion.innerText = questions[0].incorrect_answers[1]
-    fourthQuestion.innerText = questions[0].incorrect_answers[2]
+    firstQuestion.innerText = `1 - questions[0].correct_answer`
+    secondQuestion.innerText = `2 - questions[0].incorrect_answers[0]`
+    thirdQuestion.innerText = `3 - questions[0].incorrect_answers[1]`
+    fourthQuestion.innerText = `4 - questions[0].incorrect_answers[2]`
 }
 
 // create test answer function
 
 const testAnswer = function() {
-
-    verifica
-
+    /* 
+       - verifica se la risposta è corretta
+       - se è corretta aggiunge i punti al contatore
+       - se è sbagliata mostra un esclamativo rosso
+     */
 
 
 

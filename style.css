@@ -17,8 +17,8 @@ h1 {
 }
 
 #title {
-    border: solid 1px gray;
-    background-color: gray;
+    border: solid 2px rgb(202, 88, 11);
+    background-color: rgba(187, 131, 27, 0.795);
     color: white;
     padding: 10px;
 }
@@ -45,4 +45,12 @@ button {
 
 button:hover {
     background-color: rgb(99, 7, 91);
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }
