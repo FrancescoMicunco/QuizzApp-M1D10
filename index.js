@@ -21,7 +21,6 @@ const createQuestionsTable = function() {
 
 const testAnswer = function() {
         const radioButtons = document.querySelectorAll('input[name="question"]')
-        console.log(radioButtons)
         let selected;
         for (let radio of radioButtons) {
             if (radio.checked) {
@@ -44,17 +43,16 @@ const testAnswer = function() {
     // check the answer
 
 const checkAnswer = function() {
-    if (testAnswer) {
+    if (testAnswer == true) {
         let counter = 0;
         counter += 1;
-        alert("CORRECT ANSWER!");
         title.innerHTML = `<h3>${questions[1].question}</h3>`
         questionNumber.innerText = questionNumbersArray[1]
         firstQuestion.innerText = `1 - ` + questions[1].correct_answer
         secondQuestion.innerText = `2 -` + questions[1].incorrect_answers[0]
         thirdQuestion.innerText = `3 - ` + questions[1].incorrect_answers[1]
         fourthQuestion.innerText = `4 - ` + questions[1].incorrect_answers[2]
-
+        alert("CORRECT ANSWER!");
     } else {
         alert("WRONG ANSWER!")
         let wrong = document.createElement("p");
