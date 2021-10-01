@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;500;700&display=swap" rel="stylesheet">
+
 
     <title>Quiz App for fun</title>
     <!--
@@ -47,10 +45,10 @@
 
         --------- HTML -----------
         1) CREARE LA SEZIONE DELLE DOMANDE
-            - TESTO DELLA DOMANDA
-            - NUMERO DELLA DOMANDA/DOMANDE TOTALI
-            - RISPOSTE POSSIBILI
-            - PULSANTE INVIO
+            - TESTO DELLA DOMANDA  OK
+            - NUMERO DELLA DOMANDA/DOMANDE TOTALI  OK
+            - RISPOSTE POSSIBILI  OK
+            - PULSANTE INVIO  OK
         --------- CSS -------------
         2) formattare la card delle domande
         3) creare hover per il mouse
@@ -71,15 +69,17 @@
 
 <body>
 
-    <header>QUIZ FOR PC SCIENTIST</header>
+    <header>
+        <h1>QUIZ FOR PC SCIENTIST</h1>
+    </header>
     <section>
         <div>
             <div class="question" id="question">
-                <div>
-                    <h3 id="title">${dato}</h3>
+                <div class="highSection">
+                    <h3 id="title"></h3>
                     <h4 id="question_Number">Question <span id="number">${dato}</span>/10</h4>
                 </div>
-                <div>
+                <div class="questionArea">
                     <div>
                         <label for="question1" id="first"></label>
                         <input type="radio" name="question1">

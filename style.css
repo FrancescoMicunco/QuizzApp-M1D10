@@ -1,6 +1,44 @@
-body {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-family: 'Lora', serif;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    body {
+    font-family: 'Oswald', sans-serif;
     background-color: antiquewhite;
+    text-align: center;
+    box-sizing: border-box;
 }
+
+h1 {
+    font-size: 60px;
+}
+
+#question {
+    border: solid red 2px
+}
+
+#title {
+    border: solid 1px gray;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+}
+
+#number {
+    margin-left: 50%;
+}
+
+.highSection {
+    display: inline-flex;
+}
+
+div .questionArea {
+    padding: 5%;
+}
+
+button {
+    color: lemonchiffon;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgb(179, 13, 165);
+}
+
+button:hover {
+    background-color: rgb(99, 7, 91);
