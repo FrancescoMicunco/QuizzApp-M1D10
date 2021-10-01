@@ -20,34 +20,62 @@ const createQuestionsTable = function() {
 // create grab checked answer
 
 const testAnswer = function() {
-    const radioButtons = document.querySelectorAll('input[name="question"]')
-    let selected;
-    for (let radio of radioButtons) {
-        if (radio.checked) {
-            selected = radio.value;
-            break;
+        const radioButtons = document.querySelectorAll('input[name="question"]')
+        console.log(radioButtons)
+        let selected;
+        for (let radio of radioButtons) {
+            if (radio.checked) {
+                selected = radio.value;
+                console.log(selected)
+                break;
+            }
+
         }
-        console.log(selected)
+        /* 
+           - verifica se la risposta è corretta
+           
+                1 seleziona tutti gli input OK
+                2 controlla quale è in stato check  OK
+                3 associalo alla risposta corretta
+           - se è corretta aggiunge i punti al contatore OK
+           - se è sbagliata mostra un esclamativo rosso
+           - passa alla domanda successiva to fix
+         */
     }
-    /* 
-       - verifica se la risposta è corretta
-       
-            1 seleziona tutti gli input ok
-            2 controlla quale è in stato check  to fix
-            3 associalo alla risposta corretta
-       - se è corretta aggiunge i punti al contatore OK
-       - se è sbagliata mostra un esclamativo rosso
-       - passa alla domanda successiva
-     */
+    // check the answer
 
+const checkAnswer = function() {
+    if (testAnswer) {
+        counter();
+        title.innerHTML = `<h3>${questions[1].question}</h3>`
+        questionNumber.innerText = questionNumbersArray[1]
+        firstQuestion.innerText = `1 - ` + questions[1].correct_answer
+        secondQuestion.innerText = `2 -` + questions[1].incorrect_answers[0]
+        thirdQuestion.innerText = `3 - ` + questions[1].incorrect_answers[1]
+        fourthQuestion.innerText = `4 - ` + questions[1].incorrect_answers[2]
 
+    } else {
+        let wrong = document.createElement("p");
+        wrong.innerText = "!";
+        wrong.classList.add("red");
+        let wrongArea = document.querySelector("h4")
+        wrongArea.appendChild(wrong)
+    }
 
 }
+
+
+
+
+
 
 // create onclick event
 
 let button = document.getElementById("send").addEventListener("click", testAnswer);
-
+// create a random number between 1 and 4
+const choiceanswer = function() {
+    return Math.floor(Math.random() * 4 + 1)
+}
 
 // create a counter
 
