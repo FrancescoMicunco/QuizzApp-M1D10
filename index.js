@@ -8,13 +8,21 @@ let fourthQuestion = document.getElementById("fourth")
 let questionNumbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // create table for questions
+const quizGame = function() {
+    for (a = 0; a < questionNumbersArray.length; a++) {
+        createQuestionsTable(a)
+        checkAnswer()
+    }
+
+}
 const createQuestionsTable = function() {
-    title.innerHTML = `<h3>${questions[0].question}</h3>`
-    questionNumber.innerText = questionNumbersArray[0]
-    firstQuestion.innerText = `1 - ` + questions[0].correct_answer
-    secondQuestion.innerText = `2 -` + questions[0].incorrect_answers[0]
-    thirdQuestion.innerText = `3 - ` + questions[0].incorrect_answers[1]
-    fourthQuestion.innerText = `4 - ` + questions[0].incorrect_answers[2]
+    a = 0;
+    title.innerHTML = `<h3>${questions[a].question}</h3>`
+    questionNumber.innerText = questionNumbersArray[a]
+    firstQuestion.innerText = `1 - ` + questions[a].correct_answer
+    secondQuestion.innerText = `2 -` + questions[a].incorrect_answers[0]
+    thirdQuestion.innerText = `3 - ` + questions[a].incorrect_answers[1]
+    fourthQuestion.innerText = `4 - ` + questions[a].incorrect_answers[2]
 }
 
 // create grab checked answer
@@ -64,6 +72,7 @@ const checkAnswer = function() {
 
 }
 
+
 // create onclick event
 
 let button = document.getElementById("send").addEventListener("click", checkAnswer);
@@ -72,15 +81,6 @@ const choiceanswer = function() {
     return Math.floor(Math.random() * 4 + 1)
 }
 
-// create a counter
-
-/* const counter = function() {
-    let counter = 0;
-    counter += 1
-        alert("CORRECT ANSWER!")
-    } else { alert("WRONG ANSWER!") }
-}
- */
 
 
 
