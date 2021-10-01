@@ -20,7 +20,12 @@ const createQuestionsTable = function() {
 // create test answer function
 
 const testAnswer = function() {
-    alert("Tutto OK!")
+
+    verifica
+
+
+
+
 }
 
 // create onclick event
