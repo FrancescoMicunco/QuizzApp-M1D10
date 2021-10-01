@@ -9,13 +9,15 @@ let questionNumbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // create table for questions
 const quizGame = function() {
-    for (a = 0; a < questionNumbersArray.length; a++) {
+    let wrongArea = document.querySelector("h4")
+    wrongArea.appendChild("")
+    for (a = 1; a < questionNumbersArray.length; a++) {
         createQuestionsTable(a)
         checkAnswer()
     }
 
 }
-const createQuestionsTable = function() {
+const createQuestionsTable = function(a) {
     a = 0;
     title.innerHTML = `<h3>${questions[a].question}</h3>`
     questionNumber.innerText = questionNumbersArray[a]
@@ -33,7 +35,6 @@ const testAnswer = function() {
         for (let radio of radioButtons) {
             if (radio.checked) {
                 selected = radio.value;
-                console.log(selected)
                 break;
             }
         }
@@ -54,26 +55,24 @@ const checkAnswer = function() {
     if (testAnswer == true) {
         let counter = 0;
         counter += 1;
-        title.innerHTML = `<h3>${questions[1].question}</h3>`
-        questionNumber.innerText = questionNumbersArray[1]
-        firstQuestion.innerText = `1 - ` + questions[1].correct_answer
-        secondQuestion.innerText = `2 -` + questions[1].incorrect_answers[0]
-        thirdQuestion.innerText = `3 - ` + questions[1].incorrect_answers[1]
-        fourthQuestion.innerText = `4 - ` + questions[1].incorrect_answers[2]
+        quizGame()
         alert("CORRECT ANSWER!");
     } else {
         alert("WRONG ANSWER!")
+        error()
+        quizGame()
+    }
+
+}
+
+let error = function() {
         let wrong = document.createElement("p");
         wrong.innerText = "!";
         wrong.classList.add("red");
         let wrongArea = document.querySelector("h4")
         wrongArea.appendChild(wrong)
     }
-
-}
-
-
-// create onclick event
+    // create onclick event
 
 let button = document.getElementById("send").addEventListener("click", checkAnswer);
 // create a random number between 1 and 4
